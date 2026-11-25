@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>European OB Research Workshop 2027 · NEOMA Business School, Rouen</title>
+<meta name="description" content="European OB Research Workshop, 12 May 2027, NEOMA Business School, Rouen campus. A one-day workshop for Organizational Behaviour scholars across Europe.">
+<link rel="icon" href="assets/neoma-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#582583;      /* NEOMA logo purple */
+    --purple-dark:#3d1a5c;
+    --purple-soft:#f3eef8;
+    --taupe:#aca29a;       /* NEOMA logo taupe */
+    --taupe-soft:#f4f2f0;
+    --ink:#2f2f2f;
+    --muted:#5f5a66;
+    --line:#e6e1ea;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+  a{color:var(--purple)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+  .brand img{height:44px;display:block}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;align-items:center}
+  nav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
+  nav a:hover{color:var(--purple)}
+  .btn{display:inline-block;background:var(--purple);color:#fff !important;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;transition:background .2s}
+  .btn:hover{background:var(--purple-dark)}
+  .btn.ghost{background:transparent;color:#fff !important;border:2px solid rgba(255,255,255,.7)}
+  .btn.ghost:hover{background:rgba(255,255,255,.12)}
+  .btn.small{padding:8px 16px;font-size:.9rem}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--purple);cursor:pointer}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--purple) 0%,var(--purple-dark) 100%);color:#fff;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;border:70px solid rgba(172,162,154,.18)}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:80px;position:relative;z-index:1}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:700;color:#d9cfe6}
+  .hero h1{font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.1;margin:12px 0 20px;font-weight:800}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:1.1rem;font-weight:600;margin-bottom:28px}
+  .hero .meta span{display:flex;align-items:center;gap:8px}
+  .hero p.lead{font-size:1.1rem;color:#ece6f3;max-width:560px;margin:0 0 32px}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero .ctas .btn:not(.ghost){background:#fff;color:var(--purple) !important}
+  .hero .ctas .btn:not(.ghost):hover{background:var(--taupe-soft)}
+  .hero figure{margin:0;background:#fff;border-radius:22px;padding:10px;box-shadow:0 24px 60px rgba(0,0,0,.25);transform:rotate(1.5deg)}
+  .hero figure img{width:100%;display:block;border-radius:14px}
+
+  /* Sections */
+  section{padding:84px 0}
+  section.alt{background:var(--taupe-soft)}
+  .section-head{max-width:720px;margin-bottom:40px}
+  .section-head .kicker{color:var(--taupe);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem}
+  h2{font-size:clamp(1.7rem,3vw,2.3rem);margin:8px 0 14px;color:var(--purple);font-weight:800;line-height:1.2}
+  h3{margin:0 0 8px;font-size:1.2rem;color:var(--ink)}
+  .muted{color:var(--muted)}
+
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+  .facts{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;gap:18px}
+  .fact{display:flex;gap:14px}
+  .fact .ic{flex:0 0 40px;height:40px;border-radius:10px;background:var(--purple-soft);color:var(--purple);display:grid;place-items:center;font-size:1.2rem}
+  .fact b{display:block}
+
+  .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .theme{background:#fff;border-radius:var(--radius);padding:22px;border-top:4px solid var(--purple);box-shadow:0 2px 10px rgba(88,37,131,.06)}
+  .theme:nth-child(even){border-top-color:var(--taupe)}
+  .theme .n{font-weight:800;color:var(--taupe);font-size:.85rem}
+  .theme p{margin:6px 0 0;font-weight:600}
+
+  .formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+  .format{border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:#fff;position:relative}
+  .format .tag{display:inline-block;background:var(--purple-soft);color:var(--purple);font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+  .format ul{padding-left:20px;margin:12px 0 0}
+  .format li{margin-bottom:6px}
+  .note{margin-top:24px;padding:18px 22px;border-left:4px solid var(--taupe);background:var(--taupe-soft);border-radius:0 10px 10px 0}
+
+  .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:20px}
+  .date-card{background:#fff;border-radius:var(--radius);padding:26px;text-align:left;border:1px solid var(--line)}
+  .date-card .d{font-size:1.6rem;font-weight:800;color:var(--purple);line-height:1.2}
+  .date-card .l{font-weight:600;margin-top:6px}
+  .date-card.main{background:var(--purple);border-color:var(--purple)}
+  .date-card.main .d,.date-card.main .l{color:#fff}
+  .tbc{display:inline-block;margin-left:6px;font-size:.7rem;font-weight:800;letter-spacing:.06em;background:#ffe9a8;color:#6b4e00;padding:2px 8px;border-radius:6px;vertical-align:middle}
+
+  .apply{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;border-radius:22px;padding:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+  .apply h2{color:#fff}
+  .apply p{color:#ece6f3}
+  .apply .checklist{background:rgba(255,255,255,.08);border-radius:14px;padding:22px 26px}
+  .apply .checklist li{margin-bottom:8px}
+
+  .venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .card ul{padding-left:20px;margin:8px 0 0}
+
+  .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .person{background:#fff;border-radius:var(--radius);padding:26px;text-align:center;border:1px solid var(--line)}
+  .avatar{width:76px;height:76px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-weight:800;font-size:1.5rem;color:#fff;background:var(--purple)}
+  .person:nth-child(2) .avatar{background:var(--taupe)}
+  .person:nth-child(3) .avatar{background:var(--purple-dark)}
+  .person .role{color:var(--muted);font-size:.92rem}
+
+  footer{background:#1f1426;color:#cfc6d8;padding:48px 0 32px}
+  footer .wrap{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start}
+  footer img{height:48px;filter:brightness(0) invert(1);opacity:.95}
+  footer a{color:#fff}
+  footer small{display:block;margin-top:28px;color:#8f8599;width:100%}
+
+  .draft-banner{background:#ffe9a8;color:#6b4e00;text-align:center;font-size:.85rem;font-weight:600;padding:6px 12px}
+
+  @media (max-width:900px){
+    .hero .wrap,.about-grid,.apply,.venue-grid{grid-template-columns:1fr}
+    .hero figure{max-width:440px;transform:none}
+    nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:18px;border-bottom:1px solid var(--line)}
+    nav ul.open{display:flex}
+    .menu-toggle{display:block}
+    .apply{padding:32px}
+  }
+</style>
+</head>
+<body>
+
+<div class="draft-banner">Draft website · items marked <span class="tbc">TBC</span> are still to be confirmed</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="NEOMA Business School"><img src="assets/neoma-logo.svg" alt="NEOMA Business School"></a>
+    <nav aria-label="Main">
+      <button class="menu-toggle" aria-label="Open menu" onclick="document.querySelector('nav ul').classList.toggle('open')">&#9776;</button>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#themes">Themes</a></li>
+        <li><a href="#formats">Formats</a></li>
+        <li><a href="#dates">Key dates</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#organizers">Organizers</a></li>
+        <li><a class="btn small" href="#apply">Apply</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">2nd edition · Call for submissions</div>
+      <h1>European OB Research Workshop 2027</h1>
+      <div class="meta">
+        <span>📅 Wednesday, 12 May 2027</span>
+        <span>📍 NEOMA Business School, Rouen campus</span>
+      </div>
+      <p class="lead">A one-day workshop bringing together Organizational Behaviour scholars across Europe to share research, exchange constructive, developmental feedback, and build new collaborations.</p>
+      <div class="ctas">
+        <a class="btn" href="https://neoma.eu.qualtrics.com/jfe/form/SV_9vND0r5Rt0zcdEO" target="_blank" rel="noopener">Submit your application</a>
+        <a class="btn ghost" href="#formats">Presentation formats</a>
+      </div>
+    </div>
+    <figure>
+      <img src="assets/team-illustration.jpg" alt="Illustration of the three organizers planning the OB conference around a table">
+    </figure>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-head">
+        <div class="kicker">About the workshop</div>
+        <h2>Welcome to Rouen</h2>
+      </div>
+      <p>We invite you to the European OB Research Workshop at NEOMA Business School’s Rouen campus on <b>Wednesday, 12 May 2027</b>. Following the first edition at ESSEC in 2026, we look forward to welcoming colleagues to Rouen for this year’s workshop.</p>
+      <p>This one-day event brings together Organizational Behaviour scholars across Europe to share their research and exchange constructive, developmental feedback. It is also an opportunity to get to know colleagues at other institutions, identify shared research interests, and explore potential collaborations.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="ic">📅</div><div><b>Date</b>Wednesday, 12 May 2027 · full day</div></div>
+      <div class="fact"><div class="ic">📍</div><div><b>Venue</b>NEOMA Business School, Rouen campus</div></div>
+      <div class="fact"><div class="ic">🍽️</div><div><b>Included</b>Lunch, dinner and coffee breaks</div></div>
+      <div class="fact"><div class="ic">✈️</div><div><b>Travel</b>Participants arrange their own travel and accommodation</div></div>
+      <div class="fact"><div class="ic">🎟️</div><div><b>Registration fee</b>Free: there is no registration fee</div></div>
+      <div class="fact"><div class="ic">🏛️</div><div><b>The evening before</b>Visit of Rouen and dinner on Tuesday, 11 May 2027 (details to come)</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="themes" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Research themes</div>
+      <h2>We welcome research across the field of organizational behaviour</h2>
+      <p class="muted">Including, but not limited to:</p>
+    </div>
+    <div class="themes">
+      <div class="theme"><div class="n">01</div><p>Leadership, motivation, work engagement, and employee well-being</p></div>
+      <div class="theme"><div class="n">02</div><p>Identity, diversity, equity, inclusion, and relationships at work</p></div>
+      <div class="theme"><div class="n">03</div><p>Teams, collaboration, emotions, and decision-making</p></div>
+      <div class="theme"><div class="n">04</div><p>Ethics, employee voice, and responses to organizational change</p></div>
+      <div class="theme"><div class="n">05</div><p>Technology, artificial intelligence, and changing ways of working</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="formats">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">How to take part</div>
+      <h2>Two presentation formats</h2>
+    </div>
+    <div class="formats">
+      <div class="format">
+        <span class="tag">20-minute presentation</span>
+        <h3>Presentation sessions</h3>
+        <p>Submit an extended abstract for a 20-minute presentation.</p>
+        <ul>
+          <li>Up to 5 pages, 12-point font, double-spaced, excluding references</li>
+          <li>Authors of accepted abstracts may share a longer draft or full paper for circulation before the workshop (optional)</li>
+          <li>Submissions from non-tenured faculty will be given priority</li>
+        </ul>
+      </div>
+      <div class="format">
+        <span class="tag">5-minute idea kernel</span>
+        <h3>Early-stage “popcorn ideas”</h3>
+        <p>Share very early-stage ideas, before data collection, in round-table sessions.</p>
+        <ul>
+          <li>Each presenter introduces an “idea kernel” in 5 minutes</li>
+          <li>Followed by discussion and feedback in small groups to help develop the idea</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Attending without presenting?</b> You are very welcome. Please indicate this on your application.</div>
+  </div>
+</section>
+
+<section id="dates" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Key dates</div>
+      <h2>Important dates</h2>
+    </div>
+    <div class="timeline">
+      <div class="date-card"><div class="d">15 Feb 2027 <span class="tbc">TBC</span></div><div class="l">Submission deadline</div></div>
+      <div class="date-card"><div class="d">15 Mar 2027 <span class="tbc">TBC</span></div><div class="l">Notification of acceptance</div></div>
+      <div class="date-card"><div class="d">April 2027 <span class="tbc">TBC</span></div><div class="l">Optional: circulate full papers</div></div>
+      <div class="date-card"><div class="d">11 May 2027</div><div class="l">Visit of Rouen and dinner<br><span class="muted" style="font-weight:400;font-size:.9rem">Details to come</span></div></div>
+      <div class="date-card main"><div class="d">12 May 2027</div><div class="l">Workshop day, Rouen</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="wrap">
+    <div class="apply">
+      <div>
+        <h2>Submit your application</h2>
+        <p>Applications are submitted through our online form. Please choose your format (presentation session, popcorn idea, or attending only) and upload your extended abstract where relevant. Participation is free of charge.</p>
+        <a class="btn" style="background:#fff;color:var(--purple)!important" href="https://neoma.eu.qualtrics.com/jfe/form/SV_9vND0r5Rt0zcdEO" target="_blank" rel="noopener">Open the application form</a>
+      </div>
+      <ul class="checklist">
+        <li>Name, affiliation and career stage</li>
+        <li>Preferred format</li>
+        <li>Extended abstract (up to 5 pages) for presentations</li>
+        <li>Short idea description for popcorn sessions</li>
+        <li>Dietary requirements for lunch and dinner</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="venue" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Venue &amp; practical information</div>
+      <h2>NEOMA Business School, Rouen campus</h2>
+    </div>
+    <div class="venue-grid">
+      <div class="card">
+        <h3>Address</h3>
+        <p>NEOMA Business School, Rouen campus<br>1 rue du Maréchal Juin<br>76130 Mont-Saint-Aignan, France<br><a href="https://www.google.com/maps/search/?api=1&query=NEOMA+Business+School+1+rue+du+Mar%C3%A9chal+Juin+76130+Mont-Saint-Aignan" target="_blank" rel="noopener">Open in Google Maps</a></p>
+        <h3 style="margin-top:20px">Getting there from Paris</h3>
+        <ul>
+          <li><b>Train:</b> direct trains from Paris Saint-Lazare to Rouen Rive-Droite (Rouen central station), about 1 hr 15. From Paris airports, first travel into Paris to reach Saint-Lazare.</li>
+          <li><b>Bus from the station:</b> about 15 minutes to campus. Take <b>bus line 8</b> (towards Longs Vallons or École Moulin, Notre-Dame-de-Bondeville) to the stop <b>Business School</b>.</li>
+          <li><b>TEOR T1</b> (towards Mont aux Malades, Mont-Saint-Aignan) to the stop <b>Place Colbert</b>, a short walk from campus.</li>
+          <li><b>Taxi:</b> about 20 minutes from Rouen station.</li>
+          <li><b>Car:</b> about 1 hr 15 from Paris.</li>
+        </ul>
+        <p class="muted" style="font-size:.9rem">Check times on the Rouen transport network (Réseau Astuce) before travelling.</p>
+      </div>
+      <div class="card">
+        <h3>Programme of the day</h3>
+        <p class="muted">The detailed programme will be published after notification of acceptance.</p>
+        <ul>
+          <li>Presentation sessions</li>
+          <li>Popcorn idea round tables</li>
+          <li>Lunch, coffee breaks and workshop dinner</li>
+          <li>The evening before (11 May): visit of Rouen and dinner, details to come</li>
+        </ul>
+        <h3 style="margin-top:20px">Accommodation</h3>
+        <p class="muted">Participants are responsible for their own travel and accommodation. Suggested hotels in Rouen will be listed here. <span class="tbc">TBC</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="organizers">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Organizing committee</div>
+      <h2>Organizers</h2>
+    </div>
+    <div class="people">
+      <div class="person"><div class="avatar">HG</div><h3>Helena González-Gómez</h3><div class="role">NEOMA Business School</div></div>
+      <div class="person"><div class="avatar">NB</div><h3>Nishani Bourmault</h3><div class="role">NEOMA Business School</div></div>
+      <div class="person"><div class="avatar">ST</div><h3>Shiva Taghavi</h3><div class="role">NEOMA Business School</div></div>
+    </div>
+    <div class="note">For enquiries, please contact Shiva Taghavi at <a href="mailto:shiva.taghavi@neoma-bs.fr">shiva.taghavi@neoma-bs.fr</a>.</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="assets/neoma-logo.svg" alt="NEOMA Business School">
+    </div>
+    <div>
+      <b style="color:#fff">European OB Research Workshop 2027</b><br>
+      12 May 2027 · NEOMA Business School, Rouen campus<br>
+      Contact: <a href="mailto:shiva.taghavi@neoma-bs.fr">shiva.taghavi@neoma-bs.fr</a>
+    </div>
+    <small>First edition hosted by ESSEC Business School, 2026.</small>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav ul').classList.remove('open')));
+</script>
+</body>
+</html>
