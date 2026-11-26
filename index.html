@@ -48,9 +48,9 @@
   .menu-toggle{display:none;background:none;border:0;font-size:1.6rem;color:var(--purple);cursor:pointer}
 
   /* Hero */
-  .hero{background:linear-gradient(135deg,var(--purple) 0%,var(--purple-dark) 100%);color:#fff;position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;border:70px solid rgba(172,162,154,.18)}
-  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:80px;position:relative;z-index:1}
+  .hero{background:linear-gradient(90deg,rgba(61,26,92,.94) 0%,rgba(88,37,131,.82) 45%,rgba(88,37,131,.25) 100%),url("https://neoma-bs.com/sites/default/files/uploaded_images/rouen-14-scaled.jpg") center/cover no-repeat,var(--purple);color:#fff;position:relative;overflow:hidden}
+  .hero .credit{position:absolute;right:12px;bottom:8px;font-size:.7rem;color:rgba(255,255,255,.75);z-index:2}
+    .hero .wrap{display:grid;grid-template-columns:minmax(0,640px);gap:48px;align-items:center;padding-top:110px;padding-bottom:120px;position:relative;z-index:1}
   .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;font-weight:700;color:#d9cfe6}
   .hero h1{font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.1;margin:12px 0 20px;font-weight:800}
   .hero .meta{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:1.1rem;font-weight:600;margin-bottom:28px}
@@ -77,7 +77,7 @@
   .fact .ic{flex:0 0 40px;height:40px;border-radius:10px;background:var(--purple-soft);color:var(--purple);display:grid;place-items:center;font-size:1.2rem}
   .fact b{display:block}
 
-  .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
   .theme{background:#fff;border-radius:var(--radius);padding:22px;border-top:4px solid var(--purple);box-shadow:0 2px 10px rgba(88,37,131,.06)}
   .theme:nth-child(even){border-top-color:var(--taupe)}
   .theme .n{font-weight:800;color:var(--taupe);font-size:.85rem}
@@ -90,7 +90,7 @@
   .format li{margin-bottom:6px}
   .note{margin-top:24px;padding:18px 22px;border-left:4px solid var(--taupe);background:var(--taupe-soft);border-radius:0 10px 10px 0}
 
-  .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:20px}
+  .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
   .date-card{background:#fff;border-radius:var(--radius);padding:26px;text-align:left;border:1px solid var(--line)}
   .date-card .d{font-size:1.6rem;font-weight:800;color:var(--purple);line-height:1.2}
   .date-card .l{font-weight:600;margin-top:6px}
@@ -104,16 +104,25 @@
   .apply .checklist{background:rgba(255,255,255,.08);border-radius:14px;padding:22px 26px}
   .apply .checklist li{margin-bottom:8px}
 
+  .venue-photos{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;margin-bottom:32px}
+  .venue-photos img{width:100%;height:280px;object-fit:cover;border-radius:var(--radius);display:block}
   .venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
   .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
   .card ul{padding-left:20px;margin:8px 0 0}
 
+  .lastyear{padding:0 0 84px}
+  .ly-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+  .ly-grid img{width:100%;border-radius:18px;display:block;box-shadow:0 12px 30px rgba(0,0,0,.12)}
+  .ly-grid .kicker{color:var(--taupe);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem}
   .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
   .person{background:#fff;border-radius:var(--radius);padding:20px;text-align:center;border:1px solid var(--line)}
   .avatar{width:60px;height:60px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font-weight:800;font-size:1.15rem;color:#fff;background:var(--purple)}
   .person:nth-child(2) .avatar{background:var(--taupe)}
   .person:nth-child(3) .avatar{background:var(--purple-dark)}
-  .person h3{font-size:1rem;margin-bottom:4px}
+  .person h3{font-size:1.05rem;margin-bottom:4px}
+  .person .photo{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:top;display:block;margin:0 auto 12px;border:3px solid var(--purple-soft)}
+  .person .areas{font-size:.92rem;margin:10px 0 12px}
+  .person a{font-size:.88rem;word-break:break-word}
   .person .role{color:var(--muted);font-size:.92rem}
 
   footer{background:#1f1426;color:#cfc6d8;padding:48px 0 32px}
@@ -124,7 +133,7 @@
   .draft-banner{background:#ffe9a8;color:#6b4e00;text-align:center;font-size:.85rem;font-weight:600;padding:6px 12px}
 
   @media (max-width:900px){
-    .hero .wrap,.about-grid,.apply,.venue-grid{grid-template-columns:1fr}
+    .hero .wrap,.about-grid,.apply,.venue-grid,.ly-grid,.venue-photos{grid-template-columns:1fr}
     .hero figure{max-width:440px;transform:none}
     nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:18px;border-bottom:1px solid var(--line)}
     nav ul.open{display:flex}
@@ -202,16 +211,14 @@
         <span>📅 Wednesday, 12 May 2027</span>
         <span>📍 NEOMA Business School, Rouen campus</span>
       </div>
-      <p class="lead">A one-day workshop bringing together Organizational Behaviour scholars across Europe to share research, exchange constructive, developmental feedback, and build new collaborations.</p>
+      <p class="lead">A one-day workshop, followed by dinner, bringing together Organizational Behaviour scholars across Europe to share research, exchange constructive, developmental feedback, and build new collaborations.</p>
       <div class="ctas">
         <a class="btn" href="https://neoma.eu.qualtrics.com/jfe/form/SV_9vND0r5Rt0zcdEO" target="_blank" rel="noopener">Submit your application</a>
         <a class="btn ghost" href="#formats">Presentation formats</a>
       </div>
     </div>
-    <figure>
-      <img src="team-illustration.jpg" alt="Illustration of the three organizers planning the OB conference around a table">
-    </figure>
   </div>
+  <span class="credit">NEOMA Business School, Rouen campus · Photo © NEOMA</span>
 </section>
 
 <section id="about">
@@ -227,10 +234,22 @@
     <div class="facts">
       <div class="fact"><div class="ic">📅</div><div><b>Date</b>Wednesday, 12 May 2027 · full day</div></div>
       <div class="fact"><div class="ic">📍</div><div><b>Venue</b>NEOMA Business School, Rouen campus</div></div>
-      <div class="fact"><div class="ic">🍽️</div><div><b>Included</b>Lunch, dinner and coffee breaks</div></div>
+      <div class="fact"><div class="ic">🍽️</div><div><b>Included</b>Lunch, coffee breaks and workshop dinner on 12 May</div></div>
       <div class="fact"><div class="ic">✈️</div><div><b>Travel</b>Participants arrange their own travel and accommodation</div></div>
       <div class="fact"><div class="ic">🎟️</div><div><b>Registration fee</b>Free: there is no registration fee</div></div>
-      <div class="fact"><div class="ic">🏛️</div><div><b>The evening before</b>Visit of Rouen and dinner on Tuesday, 11 May 2027 (details to come)</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="last-year" class="lastyear">
+  <div class="wrap">
+    <div class="ly-grid">
+      <img src="essec-2026.jpg" alt="Participants at the first European OB Research Workshop, ESSEC 2026" onerror="document.getElementById('last-year').style.display='none'">
+      <div>
+        <div class="kicker">Last year</div>
+        <h2>The first edition at ESSEC, 2026</h2>
+        <p>The first European OB Research Workshop took place at ESSEC Business School in Cergy on 27 April 2026. We are delighted to continue the conversation in Rouen.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -240,7 +259,7 @@
     <div class="section-head">
       <div class="kicker">Research themes</div>
       <h2>We welcome research across the field of organizational behaviour</h2>
-      <p class="muted">Including, but not limited to:</p>
+      <p class="muted">Including, but not limited to, the topics below. We welcome both <b>qualitative and quantitative</b> research.</p>
     </div>
     <div class="themes">
       <div class="theme"><div class="n">01</div><p>Leadership, motivation, work engagement, and employee well-being</p></div>
@@ -248,6 +267,7 @@
       <div class="theme"><div class="n">03</div><p>Teams, collaboration, emotions, and decision-making</p></div>
       <div class="theme"><div class="n">04</div><p>Ethics, employee voice, and responses to organizational change</p></div>
       <div class="theme"><div class="n">05</div><p>Technology, artificial intelligence, and changing ways of working</p></div>
+      <div class="theme"><div class="n">06</div><p>Professions, occupations, and expertise</p></div>
     </div>
   </div>
 </section>
@@ -262,10 +282,10 @@
       <div class="format">
         <span class="tag">20-minute presentation</span>
         <h3>Presentation sessions</h3>
-        <p>Submit an extended abstract for a 20-minute presentation.</p>
+        <p>Present a paper in a 20-minute session, followed by detailed feedback from a discussant.</p>
         <ul>
-          <li>Up to 5 pages, 12-point font, double-spaced, excluding references</li>
-          <li>Authors of accepted abstracts may share a longer draft or full paper for circulation before the workshop (optional)</li>
+          <li><b>To apply:</b> submit an extended abstract of up to 5 pages (12-point font, double-spaced, excluding references)</li>
+          <li><b>If accepted:</b> a full paper is required by 15 April 2027 <span class="tbc">TBC</span>, so that your discussant can give detailed feedback</li>
           <li>Submissions from non-tenured faculty will be given priority</li>
         </ul>
       </div>
@@ -274,6 +294,7 @@
         <h3>Early-stage “popcorn ideas”</h3>
         <p>Share very early-stage ideas, before data collection, in round-table sessions.</p>
         <ul>
+          <li><b>To apply:</b> submit a short abstract describing your idea (up to 1 page <span class="tbc">TBC</span>)</li>
           <li>Each presenter introduces an “idea kernel” in 5 minutes</li>
           <li>Followed by discussion and feedback in small groups to help develop the idea</li>
         </ul>
@@ -292,9 +313,8 @@
     <div class="timeline">
       <div class="date-card"><div class="d">15 Feb 2027 <span class="tbc">TBC</span></div><div class="l">Submission deadline</div></div>
       <div class="date-card"><div class="d">15 Mar 2027 <span class="tbc">TBC</span></div><div class="l">Notification of acceptance</div></div>
-      <div class="date-card"><div class="d">April 2027 <span class="tbc">TBC</span></div><div class="l">Optional: circulate full papers</div></div>
-      <div class="date-card"><div class="d">11 May 2027</div><div class="l">Visit of Rouen and dinner<br><span class="muted" style="font-weight:400;font-size:.9rem">Details to come</span></div></div>
-      <div class="date-card main"><div class="d">12 May 2027</div><div class="l">Workshop day, Rouen</div></div>
+      <div class="date-card"><div class="d">15 Apr 2027 <span class="tbc">TBC</span></div><div class="l">Full papers due (accepted presentations)</div></div>
+      <div class="date-card main"><div class="d">12 May 2027</div><div class="l">Workshop and dinner, Rouen</div></div>
     </div>
   </div>
 </section>
@@ -304,14 +324,14 @@
     <div class="apply">
       <div>
         <h2>Submit your application</h2>
-        <p>Applications are submitted through our online form. Please choose your format (presentation session, popcorn idea, or attending only) and upload your extended abstract where relevant. Participation is free of charge.</p>
+        <p>Applications are submitted through our online form. Please choose your format (presentation session, popcorn idea, or attending only) and upload your abstract: an extended abstract for presentations, or a short abstract for popcorn ideas. Participation is free of charge.</p>
         <a class="btn" style="background:#fff;color:var(--purple)!important" href="https://neoma.eu.qualtrics.com/jfe/form/SV_9vND0r5Rt0zcdEO" target="_blank" rel="noopener">Open the application form</a>
       </div>
       <ul class="checklist">
         <li>Name, affiliation and career stage</li>
         <li>Preferred format</li>
         <li>Extended abstract (up to 5 pages) for presentations</li>
-        <li>Short idea description for popcorn sessions</li>
+        <li>Short abstract for popcorn ideas</li>
         <li>Dietary requirements for lunch and dinner</li>
       </ul>
     </div>
@@ -324,6 +344,10 @@
       <div class="kicker">Venue &amp; practical information</div>
       <h2>NEOMA Business School, Rouen campus</h2>
     </div>
+    <div class="venue-photos">
+      <img src="https://neoma-bs.com/sites/default/files/uploaded_images/rouen-12-scaled.jpg" alt="NEOMA Rouen campus" loading="lazy">
+      <img src="https://neoma-bs.com/sites/default/files/img/rouen-visuel-en.jpg" alt="The Gros-Horloge astronomical clock in Rouen" loading="lazy">
+    </div>
     <div class="venue-grid">
       <div class="card">
         <h3>Address</h3>
@@ -331,8 +355,7 @@
         <h3 style="margin-top:20px">Getting there from Paris</h3>
         <ul>
           <li><b>Train:</b> direct trains from Paris Saint-Lazare to Rouen Rive-Droite (Rouen central station), about 1 hr 15. From Paris airports, first travel into Paris to reach Saint-Lazare.</li>
-          <li><b>Bus from the station:</b> about 15 minutes to campus. Take <b>bus line 8</b> (towards Longs Vallons or École Moulin, Notre-Dame-de-Bondeville) to the stop <b>Business School</b>.</li>
-          <li><b>TEOR T1</b> (towards Mont aux Malades, Mont-Saint-Aignan) to the stop <b>Place Colbert</b>, a short walk from campus.</li>
+          <li><b>Bus from the station:</b> take bus <b>F2</b> or <b>F7</b> from Rouen train station (Gare) to Mont-Saint-Aignan, about 15 minutes to campus.</li>
           <li><b>Taxi:</b> about 20 minutes from Rouen station.</li>
           <li><b>Car:</b> about 1 hr 15 from Paris.</li>
         </ul>
@@ -344,8 +367,8 @@
         <ul>
           <li>Presentation sessions</li>
           <li>Popcorn idea round tables</li>
-          <li>Lunch, coffee breaks and workshop dinner</li>
-          <li>The evening before (11 May): visit of Rouen and dinner, details to come</li>
+          <li>Lunch and coffee breaks</li>
+          <li>Workshop dinner on the evening of 12 May</li>
         </ul>
         <h3 style="margin-top:20px">Accommodation</h3>
         <p class="muted">Participants are responsible for their own travel and accommodation. Suggested hotels in Rouen will be listed here. <span class="tbc">TBC</span></p>
@@ -358,12 +381,30 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Organizing committee</div>
-      <h2>Organizers</h2>
+      <h2>This year’s organizers</h2>
     </div>
     <div class="people">
-      <div class="person"><div class="avatar">HG</div><h3>Helena González-Gómez</h3><div class="role">NEOMA Business School</div></div>
-      <div class="person"><div class="avatar">NB</div><h3>Nishani Bourmault</h3><div class="role">NEOMA Business School</div></div>
-      <div class="person"><div class="avatar">ST</div><h3>Shiva Taghavi</h3><div class="role">NEOMA Business School</div></div>
+      <div class="person">
+        <img class="photo" src="https://neoma-bs.com/sites/default/files/uploaded_images/photos_academ/139-gonzlez-gmez-helena.jpg" alt="Helena González-Gómez" loading="lazy">
+        <h3>Helena González-Gómez</h3>
+        <div class="role">Full Professor, People &amp; Organisations, NEOMA</div>
+        <p class="areas">Emotions at work, creativity, and inequality in HR decisions</p>
+        <a href="mailto:helena.gonzalez@neoma-bs.fr">helena.gonzalez@neoma-bs.fr</a> · <a href="https://neoma-bs.com/professors/gonzalez-gomez-helena" target="_blank" rel="noopener">Profile</a>
+      </div>
+      <div class="person">
+        <img class="photo" src="https://neoma-bs.com/sites/default/files/uploaded_images/photos_academ/3346-bourmault-nishani.jpg" alt="Nishani Bourmault" loading="lazy">
+        <h3>Nishani Bourmault</h3>
+        <div class="role">Associate Professor, People &amp; Organisations, NEOMA</div>
+        <p class="areas">Occupational and societal norms, professions, and individuals and organizations in transition and change</p>
+        <a href="mailto:nishani.bourmault@neoma-bs.fr">nishani.bourmault@neoma-bs.fr</a> · <a href="https://neoma-bs.com/professors/bourmault-nishani" target="_blank" rel="noopener">Profile</a>
+      </div>
+      <div class="person">
+        <img class="photo" src="https://neoma-bs.com/sites/default/files/uploaded_images/photos_academ/2860-taghavi-shiva.jpg" alt="Shiva Taghavi" loading="lazy">
+        <h3>Shiva Taghavi</h3>
+        <div class="role">Associate Professor, People &amp; Organisations, NEOMA</div>
+        <p class="areas">Multiple identities, gender diversity and intersectionality, migrants and refugees, and DEI</p>
+        <a href="mailto:shiva.taghavi@neoma-bs.fr">shiva.taghavi@neoma-bs.fr</a> · <a href="https://neoma-bs.com/professors/taghavi-shiva" target="_blank" rel="noopener">Profile</a>
+      </div>
     </div>
     <div class="note">For enquiries, please contact Shiva Taghavi at <a href="mailto:shiva.taghavi@neoma-bs.fr">shiva.taghavi@neoma-bs.fr</a>.</div>
   </div>
